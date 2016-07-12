@@ -22,7 +22,7 @@ The startup scrpit usually be like this:
 java -jar -Xmx900M -Xms300M -jar serverfilename.jar nogui
 
 The backup script example(you can also write a better one by yourself):
-setdate=`date +%Y%m%d%H%M%S`
+setdate=\`date +%Y%m%d%H%M%S\`
 echo $setdate
 cd /the/path/of/mc/server/dir &&  git commit -am "$setdate"
 
