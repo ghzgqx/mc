@@ -19,7 +19,7 @@ $backupscript The path of backup scripts(use git commit to backup server files,y
 
 #Other
 The startup scrpit usually be like this:<br>
-java -jar -Xmx900M -Xms300M -jar serverfilename.jar nogui<br>
+java -Xmx900M -Xms300M -jar serverfilename.jar nogui<br>
 
 The backup script example(you can also write a better one by yourself):<br>
 setdate=\`date +%Y%m%d%H%M%S\`<br>
