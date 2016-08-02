@@ -21,6 +21,9 @@ case $1 in
 	cd $mcdir
         screen -R $screenname $startupscript
 ;;
+	du)
+	du -sh $mcdir
+;;
 	backup)
 		case $2 in
 			do)
@@ -47,7 +50,7 @@ case $1 in
 			
 ;;
 	*)
-	echo "mc - Minecraft Server Control System"
-	echo "usage [start]|[stop]|[restart]|[shell]|[backup ([do]|[log]|[rec ([commit id])]|[gc])]"
+	echo "mc - Linux Minecraft Server Control System"
+	echo "usage [start]|[stop]|[restart]|[shell]|[du]|[backup ([do]|[log]|[rec ([commit id])]|[gc])]"
 ;;
 esac

@@ -2,9 +2,9 @@
 mc - A .sh to control Minecraft server on Linux
 
 # Usage
-mc [start]|[stop]|[restart]|[shell]|[backup ([do]|[log]|[rec ([commit id])]|[gc])]
+usage [start]|[stop]|[restart]|[shell]|[du]|[backup ([do]|[log]|[rec ([commit id])]|[gc])]
 
-#Normal
+#How to use
 You may need to chmod it at first<br>
 chmod +x mc<br>
 You can also put it in /usr/bin after you set all vars according to your own path.<br>
