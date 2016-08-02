@@ -21,12 +21,12 @@ $backupscript The path of backup scripts(use git commit to backup server files,y
 The startup scrpit usually be like this:<br>
 java -Xmx900M -Xms300M -jar serverfilename.jar nogui<br>
 
-The backup script example(you can also write a better one by yourself):<br>
-setdate=\`date +%Y%m%d%H%M%S\`<br>
-echo $setdate<br>
-cd /the/path/of/mc/server/dir &&  git commit -am "$setdate"<br>
-<br>
-(To use this ,you must make the first commit by yourself)<br>
+
+You can create a git repo with command:<br>
+mc backup init<br>
+
+
+
 
 # License
 版权没有 盗版不究 随便改随便发 反正就一个sh

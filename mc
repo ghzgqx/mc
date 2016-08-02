@@ -2,7 +2,6 @@ echo "mc $1 $2 $3"
 mcdir=~/data
 screenname=mc
 startupscript=./start.sh
-backupscript=~/gitbkup.sh
 case $1 in
 	start)
 	cd $mcdir
@@ -27,8 +26,10 @@ case $1 in
 	backup)
 		case $2 in
 			do)
-			cd ~
-			$backupscript
+			setdate=`date +%Y%m%d%H%M%S`
+			echo $setdate
+			cd $mcdir &&  git commit -am "$setdate"
+
 		;;
 			log)
 			cd $mcdir
@@ -42,15 +43,21 @@ case $1 in
 			cd $mcdir
 			git gc
 		;;
+			init)
+			cd $mcdir
+			git init
+			git add ./*
+			git commit -m "Git Init"
+		;;
 			*)
 			echo "mc backup- Minecraft Server Control System - Backup"
-			echo "usage [do]|[log]|[rec ([commit id])]|[gc]"
+			echo "usage [do]|[log]|[rec ([commit id])]|[gc]|[init]"
 		;;
 		esac
 			
 ;;
 	*)
 	echo "mc - Linux Minecraft Server Control System"
-	echo "usage [start]|[stop]|[restart]|[shell]|[du]|[backup ([do]|[log]|[rec ([commit id])]|[gc])]"
+	echo "usage [start]|[stop]|[restart]|[shell]|[du]|[backup ([do]|[log]|[rec ([commit id])]|[gc]|[init])]"
 ;;
 esac
