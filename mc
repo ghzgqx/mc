@@ -28,12 +28,14 @@ case $1 in
 			do)
 			setdate=`date +%Y%m%d%H%M%S`
 			echo $setdate
-			cd $mcdir &&  git commit -am "$setdate"
+			cd $mcdir 
+			git add -A
+			git commit -m "$setdate"
 
 		;;
 			log)
 			cd $mcdir
-			git log
+			git reflog
 		;;
 			rec)
 			cd $mcdir
